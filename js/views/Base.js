@@ -13,8 +13,7 @@ define(
                 this.render();
             },
             render: function(){
-                var html = _(this.template).template();
-                this.$el.html(html);
+                this.$el.html(_(this.template).template());
             },
             template: '\
                 <div> FOOBART </div>\

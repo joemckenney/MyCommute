@@ -19,25 +19,9 @@ require.config({
     }    
 });
 
-define(
-    [
-        'jquery',
-        'backbone',
-        'underscore',
-        'views/Base'
-    ], 
-    function($, Backbone, _, BaseView) {
-        var Router = Backbone.Router.extend({
-            routes: {
-                '': 'root'
-            },
-            root: function() {
-                var baseview = new BaseView();
-                baseview.render();
-            }
-
-        });
-        var router = new Router();
+define([ 'routers/Base' ], 
+    function(BaseRouter) {
+        var Router = new BaseRouter();
         Backbone.history.start();
     }
 );
