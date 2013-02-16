@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('python/index.html', require=url_for('static', filename='js/require.js'))
+    return render_template('python/index.html', require=url_for('static', filename='js/require.js'), shims=url_for('static', filename='js/shims.js'))
 
 
 if __name__ == '__main__':
