@@ -2,17 +2,21 @@ require(
     [
         'jquery',
         'backbone',
-        'underscore'
+        'underscore',
+        'views/Base'
     ], 
-    function($, Backbone, _) {
-        return Backbone.Router.extend({
+    function($, Backbone, _, BaseView) {
+        var Router = Backbone.Router.extend({
             routes: {
                 '': 'root'
             },
             root: function() {
-                debugger 
+                var baseview = new BaseView();
+                basview.render();
             }
 
         });
+        var router = new Router();
+        Backbone.history.start();
     }
 );

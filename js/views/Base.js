@@ -1,4 +1,4 @@
-require(
+define(
     [
         'jquery',
         'backbone',
@@ -6,17 +6,18 @@ require(
     ], 
     function($, Backbone, _) {
         return Backbone.View.extend({
+            el: $('#container'),
             initialize: function(){
                 Backbone.View.prototype.initialize.apply(this, arguments);
+                debugger
                 this.render();
             },
             render: function(){
                 var html = _(this.template).template();
-                this.$el.append(this.childView.render().el);           
+                this.$el.html(html);
             },
             template: '\
                 <div> FOOBART </div>\
             '
         });
-
-    ]);
+});
