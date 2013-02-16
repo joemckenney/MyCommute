@@ -6,6 +6,9 @@ require.config({
         backbone: 'lib/backbone'
     },
     shim: {
+        jquery: {
+            exports: "$"
+        },
         underscore: {
             exports: "_"
         },
@@ -16,5 +19,14 @@ require.config({
     }    
 });
 
-
-
+require(  
+    [
+        'backbone',
+        'routers/Base'
+    ], 
+    function(Backbone, Base){
+        debugger
+        var router = new Base();
+        Backbone.history.start();
+    }
+);

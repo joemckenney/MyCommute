@@ -7,11 +7,12 @@ require(
     function($, Backbone, _) {
         return Backbone.Router.extend({
             routes: {
-                '': 'page'
+                '': 'root'
             },
-            page: function() {
-                //instantiate some view 
+            root: function() {
+                debugger 
             }
+
         });
     }
 );
