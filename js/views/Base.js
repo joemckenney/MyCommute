@@ -9,7 +9,6 @@ define(
             el: $('#container'),
             initialize: function(){
                 Backbone.View.prototype.initialize.apply(this, arguments);
-                debugger
                 this.render();
             },
             render: function(){
