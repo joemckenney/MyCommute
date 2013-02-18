@@ -4,10 +4,11 @@ define(
         'backbone',
         'underscore',
         'views/Base',
+        'routers/Base',
         'views/Page1',
         'views/Page2'
     ], 
-    function($, Backbone, _, BaseView, BaseRouter, Page1Viewm, Page2View) {
+    function($, Backbone, _, BaseView, BaseRouter, Page1View, Page2View) {
         return Backbone.Router.extend({
             routes: {
                 '': 'root',

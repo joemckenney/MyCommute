@@ -15,7 +15,11 @@ define(
                 this.$el.html(_(this.template).template());
             },
             template: '\
-                <div> FOOBART </div>\
+                <a href="/foo">Foo </a>\
+                <a href="/bar">Bar </a>\
+                <p> With Hashes: </p>\
+                <a href="/#foo">Foo </a>\
+                <a href="/#bar">Bar </a>\
             '
         });
 });

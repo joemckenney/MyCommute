@@ -22,6 +22,6 @@ require.config({
 define([ 'routers/Base' ], 
     function(BaseRouter) {
         var Router = new BaseRouter();
-        Backbone.history.start();
+        Backbone.history.start({ pushState: true });
     }
 );
