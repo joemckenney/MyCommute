@@ -22,6 +22,10 @@ require.config({
 define([ 'routers/Base' ], 
     function(BaseRouter) {
         var Router = new BaseRouter();
+        $(document).click("a", function(e) { 
+            Backbone.history.navigate($(e.target).attr("href"), true);
+            e.preventDefault();
+        });
         Backbone.history.start({ pushState: true });
     }
 );
