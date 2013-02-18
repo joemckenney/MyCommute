@@ -20,9 +20,6 @@ define(
                 var baseview = new BaseView();
             },
             page1: function() {
-                var route = $(event.target).attr('data-route');
-                router.navigate(route, true);
-                return false;
                 var page1view = new Page1View();
             },
             page2: function() {
