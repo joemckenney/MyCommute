@@ -3,30 +3,28 @@ define(
         'jquery',
         'backbone',
         'underscore',
-        'views/Base',
-        'routers/Base',
-        'views/Page1',
-        'views/Page2'
+        'routers/Home'
     ], 
-    function($, Backbone, _, BaseView, BaseRouter, Page1View, Page2View) {
+    function($, Backbone, _, HomeRouter) {
         return Backbone.Router.extend({
             routes: {
-                '': 'root',
-                'foo': 'page1',
-                'bar': 'page2'
+                ':page': 'page',
             },
-            root: function() {
+            initialize: function() {
+                //models
+                this.pageModel = new Backbone.Model();
+               
+                //pages
+                this.homepagecontroller = new HomeRouter({
+                    models: {
+                        pageModel: this.pageModel
+                    }
+                });
+            },
+            page: function(page) {
                 debugger
-                var baseview = new BaseView();
-            },
-            page1: function() {
-                var page1view = new Page1View();
-            },
-            page2: function() {
-                debugger
-                var page2view = new Page2View();
+                this.pageModel.set('page', page); 
             }
-
         });
     }
 );
