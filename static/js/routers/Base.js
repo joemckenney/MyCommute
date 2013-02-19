@@ -3,27 +3,39 @@ define(
         'jquery',
         'backbone',
         'underscore',
-        'routers/Home'
+        'views/Home',
+        'views/User'
     ], 
-    function($, Backbone, _, HomeRouter) {
+    function($, Backbone, _, HomeView, UserView) {
         return Backbone.Router.extend({
-            routes: {
-                ':page': 'page',
+            initialize: function(){
+                this.appModel = new Backbone.Model();
+
+                this.appModel.on('change:page', function(){
+                    Backbone.history.navigate(this.appModel.get('page'));
+                },this);
             },
-            initialize: function() {
-                //models
-                this.pageModel = new Backbone.Model();
-               
-                //pages
-                this.homepagecontroller = new HomeRouter({
+            routes: {
+                '': 'home',
+                'user': 'user'
+            },
+            home: function(page) {
+                this.appModel.set('page', '');
+                this.homeview = new HomeView({
                     models: {
-                        pageModel: this.pageModel
+                        app: this.appModel
                     }
                 });
+                this.homeview.render();
             },
-            page: function(page) {
-                debugger
-                this.pageModel.set('page', page); 
+            user: function() {
+                this.appModel.set('page', 'user');
+                this.userview = new UserView({
+                    models: {
+                        app: this.appModel
+                    }
+                });
+                this.userview.render();
             }
         });
     }

@@ -7,7 +7,6 @@ define(
     ], 
     function($, Backbone, _, BaseView) {
         return BaseView.extend({
-            //TODO: this needs to go, think about how we handle this
             el: $('#container'),
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
@@ -22,7 +21,7 @@ define(
             },
             template: '\
                 <div> HOMEPAGE </div>\
-                <a href="/user">Edit User Settings</a>\
+                <a href="">Back To Log In</a>\
             '
         });
 });
