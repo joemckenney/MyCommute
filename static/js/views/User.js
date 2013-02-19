@@ -13,6 +13,7 @@ define(
             events: {
                 'click a': function(e) {
                     this.models.app.set('page', $(e.target).attr('href'));
+                    e.preventDefault();
                 }
             },
             render: function(){

@@ -12,7 +12,7 @@ define(
                 this.appModel = new Backbone.Model();
 
                 this.appModel.on('change:page', function(){
-                    Backbone.history.navigate(this.appModel.get('page'));
+                    Backbone.history.navigate(this.appModel.get('page'), true);
                 },this);
             },
             routes: {
