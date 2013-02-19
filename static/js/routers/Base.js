@@ -22,6 +22,7 @@ define(
             home: function(page) {
                 this.appModel.set('page', '');
                 this.homeview = new HomeView({
+                    el: $('#container'),
                     models: {
                         app: this.appModel
                     }
@@ -31,6 +32,7 @@ define(
             user: function() {
                 this.appModel.set('page', 'user');
                 this.userview = new UserView({
+                    el: $('#container'),
                     models: {
                         app: this.appModel
                     }
