@@ -3,7 +3,8 @@ require.config({
     paths: {
         jquery: 'lib/jquery',
         underscore: 'lib/underscore',
-        backbone: 'lib/backbone'
+        backbone: 'lib/backbone',
+        'bootstrap.modal': 'lib/bootstrap.modal',
     },
     shim: {
         jquery: {
@@ -15,6 +16,9 @@ require.config({
         backbone: {
             deps: ['underscore', 'jquery'],
             exports: 'Backbone'
+        },
+        bootstrap: {
+            deps: ['jquery']
         }
     }    
 });

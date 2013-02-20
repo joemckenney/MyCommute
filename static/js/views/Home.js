@@ -3,25 +3,38 @@ define(
         'jquery',
         'backbone',
         'underscore',
-        'views/Base'
+        'bootstrap.modal',
+        'views/Base',
+        'views/SignUp'
     ], 
-    function($, Backbone, _, BaseView) {
+    function($, Backbone, _, Bootstrap, BaseView, SignUp) {
         return BaseView.extend({
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
+                this.children.signup = new SignUp();
             },
             events: {
-                'click a': function(e) {
-                    this.models.app.set('page', $(e.target).attr('href'));
+                'click .sign-up-btn': function(e) {
+                    !this.children.signup.$el.is(':visible') ?
+                        this.children.signup.$el.show():
+                        this.children.signup.$el.hide();
                     e.preventDefault();
                 }
             },
             render: function(){
+                debugger
                 this.$el.html(this.compiledTemplate());
+                this.$el.append(this.children.signup.render().el);
+                this.children.signup.$el.hide();
+                return this;
             },
             template: '\
-                <div> HOMEPAGE </div>\
-                <a href="/user">Edit User Settings</a>\
+                <div class="sign-up">\
+                    <a href="#myModal" role="button" data-toggle="modal" class="btn btn-success sign-up-btn">Sign Up</a>\
+                </div>\
             '
         });
 });
+
+
+
