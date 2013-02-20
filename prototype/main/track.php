@@ -90,7 +90,7 @@ include('../includes/header.php');
 		</div>
 	</div>
 	<a class="btn pull-left" href="#"><i class="icon-plus"></i> Add Line</a>
-	<a href="../prototype/saved.php" class="btn btn-primary pull-right">Save</a>
+	<a href="../main/saved.php" class="btn btn-primary pull-right">Save</a>
 
 </div>
 

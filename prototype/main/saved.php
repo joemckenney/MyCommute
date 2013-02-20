@@ -6,7 +6,7 @@ include('../includes/header.php');
 	
 		function openWin()
 		{
-			myWindow=window.open('../transit/status.php','','width=500,height=400,menubar=no,status=no,toolbar=no,titlebar=no');
+			myWindow=window.open('../main/status.php','','width=500,height=400,menubar=no,status=no,toolbar=no,titlebar=no');
 			myWindow.focus();
 		}
 </script>
@@ -15,7 +15,7 @@ include('../includes/header.php');
 
 	<div class="masthead">
         <ul class="nav nav-pills pull-right">
-          <li><a href="../prototype/track.php">Tracked Lines</a></li>
+          <li><a href="../main/track.php">Tracked Lines</a></li>
           <li><a href="#">Sign Out</a></li>
         </ul>
         <h3 class="muted">MyCommute</h3>
