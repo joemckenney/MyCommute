@@ -3,11 +3,10 @@ define(
         'jquery',
         'backbone',
         'underscore',
-        'bootstrap.modal',
         'views/Base',
         'views/SignUp'
     ], 
-    function($, Backbone, _, Bootstrap, BaseView, SignUp) {
+    function($, Backbone, _, BaseView, SignUp) {
         return BaseView.extend({
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
@@ -22,16 +21,13 @@ define(
                 }
             },
             render: function(){
-                debugger
                 this.$el.html(this.compiledTemplate());
                 this.$el.append(this.children.signup.render().el);
                 this.children.signup.$el.hide();
                 return this;
             },
             template: '\
-                <div class="sign-up">\
-                    <a href="#myModal" role="button" data-toggle="modal" class="btn btn-success sign-up-btn">Sign Up</a>\
-                </div>\
+                    <a href="#" role="button" data-target="#myModal" data-toggle="modal" class="btn btn-success sign-up-btn">Sign Up</a>\
             '
         });
 });
