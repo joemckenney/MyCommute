@@ -98,3 +98,68 @@ body {
   border-bottom: 1px solid #eee;
   padding: 20px 0px;
 }
+
+.row2{
+    -webkit-transition: -webkit-transform 500ms ease;
+
+}
+
+.transit-container-ani{
+  display:inline-block;
+}
+
+.transit-container-ani .transit-icon{
+  -webkit-transition: -webkit-transform 500ms ease, opacity 500ms ease;
+  cursor: pointer;
+  opacity: 0;
+  -webkit-transform: scale(1) translate3d(-30px,0,0);
+}
+
+.transit-container-ani .transit-icon.active{
+  -webkit-transform: scale(1) translate3d(0,0,0);
+    opacity: 1;
+}
+
+.transit-container-ani .transit-icon.active:hover{
+  opacity: .8 !important;
+}
+
+.select-trans{
+  color:#444;
+  margin-bottom:10px;
+  -webkit-transition: -webkit-transform 500ms ease, opacity 500ms ease;
+}
+
+.select-trans.gone{
+  opacity: 0;
+  -webkit-transform: scale(1) translate3d(-30px,0,0);
+
+}
+
+#icon1.active{
+  -webkit-transition-delay: 0.20s;
+}
+
+#icon2.active{
+  -webkit-transition-delay: 0.25s;
+}
+
+#icon3.active{
+  -webkit-transition-delay: 0.3s;
+}
+
+#icon4.active{
+  -webkit-transition-delay: 0.35s;
+}
+
+#icon5.active{
+  -webkit-transition-delay: 0.4s;
+}
+
+#icon6.active{
+  -webkit-transition-delay: 0.5s;
+}
+
+.footer{
+  margin-top: 20px;
+}
