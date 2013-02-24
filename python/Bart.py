@@ -1,14 +1,13 @@
-class Bart():
-    BART_URL = "http://api.bart.gov/api/"
+from flask import Flask, render_template, url_for
+import requests
+from xml.dom import minidom
+from init_app import app
 
+
+BART_URL = "http://api.bart.gov/api/"
+class Bart:
     @app.route('/bart/advisory')
     def advisory(payload):
-        advisory_url = BART_URL + 'bsa.aspx'
-
-        resp = requests.get(advisory_url, params=payload)
-        if resp.status_code is 200:
-            
-
         # 
         # http://api.bart.gov/api/bsa.aspx
         #
@@ -44,5 +43,3 @@ class Bart():
         # http://api.bart.gov/api/stn.aspx
         #
         return 'bart station information'
-
-
