@@ -2,17 +2,18 @@ $(function(){
 
 	$(".chzn-select").chosen();
 
-	$(".add-line-btn").click(function(){
+	$(".add-trip-btn").click(function(){
 		$('.row2').fadeIn(200);
 		$('.transit-icon').toggleClass('active');
-		$(this).addClass('disabled');;
+		$(this).addClass('disabled').addClass('btn-secondary').removeClass('btn-primary');
 		$(".edit-btn").addClass('disabled');
-		$(".save-btn").html("Save").addClass('btn-success').removeClass('btn-secondary');	
+		$(".save-btn").html("Save").addClass('btn-primary').removeClass('btn-secondary');	
 	})
 
 	$(".save-btn").click(function(){
-		$(this).html("Edit").addClass('btn-secondary').removeClass('btn-success');
-		$(".edit-btn,.add-line-btn").removeClass('disabled');
+		$(this).html("Edit").addClass('btn-secondary').removeClass('btn-primary');
+		$(".edit-btn").removeClass('disabled');
+		$(".add-trip-btn").removeClass('disabled').addClass('btn-primary').removeClass('btn-secondary');
 	})
 
 	$(".transit-icon").click(function(){
@@ -20,6 +21,15 @@ $(function(){
 		$('.select-trans').addClass("gone");
 		$(this).addClass('active');
 	})
+
+	$(".line-container").hover(
+		function(){
+			$(this).find(".nav-pills").show();
+		},
+		function(){
+			$(this).find(".nav-pills").hide();
+		}
+	);
         
 });
 

@@ -10,6 +10,7 @@
 	<link href="../css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="../css/chosen.css" rel="stylesheet" media="screen">
 	<link href="../css/style.css" rel="stylesheet" media="screen">
+	<link href="../css/status_states.css" rel="stylesheet" media="screen">
 	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
 </head>
 <body>

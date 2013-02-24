@@ -1,0 +1,90 @@
+
+.status-container{
+  margin: 20px 0px;
+}
+
+.status-container .status-time{
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.status-container .transit-icon-small{
+  background-color: #dceaf4;
+  height: 30px;
+  width: 30px;
+  border-radius: 100px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.status-container .line-container{
+  margin: 5px 0px;
+}
+
+
+.status-container .status-line{
+  display: inline-block;
+  color: #999;
+}
+
+.status-container .status-line3{
+  display: inline-block;
+  color: #999;
+  min-width: 380px;
+}
+
+.status-container .line-number{
+  display: inline-block;
+  color: #666;
+  width: 15px;
+  margin-right: 10px;
+}
+
+.status-container .label{
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 11px;
+}
+
+.status-container .status-line-time{
+  display: inline-block;
+  color: #999;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+.status-container .status-line-time2{
+  display: inline-block;
+  color: #999;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.time-between{
+  font-size: 11px;
+  color: #ccc;
+  text-align: center;
+}
+
+.time-between3{
+  font-size: 11px;
+  color: #ccc;
+  text-align: right;
+  padding-right: 418px;
+
+}
+
+.status-container .nav-pills{
+margin: 0px;
+display: inline-block;
+line-height: 0px;
+vertical-align: text-bottom;
+margin-left: 10px;
+}
+
+.status-container .nav-pills a{
+padding: 3px 6px;
+margin: 0;
+color: #666;
+}

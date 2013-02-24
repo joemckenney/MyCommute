@@ -160,6 +160,10 @@ body {
   -webkit-transition-delay: 0.5s;
 }
 
+.add-trip-btn{
+  margin: 0 auto;
+}
+
 .footer{
   margin-top: 20px;
 }

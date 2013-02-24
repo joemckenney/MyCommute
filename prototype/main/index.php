@@ -10,8 +10,8 @@ include('../includes/header.php');
 		  <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">Sign In</a>
 		  <ul class="dropdown-menu pull-left" style="padding: 15px" role="menu" aria-labelledby="dLabel">
 		    <form style="margin: 0px;">
-			  <input style="margin-bottom: 15px;" type="text" size="30" />
-			  <input style="margin-bottom: 15px;" type="password" size="30" />
+			  <span>Username </span><input style="margin-bottom: 15px;" type="text" size="30" />
+			  <span>Password </span><input style="margin-bottom: 15px;" type="password" size="30" />
 			  <input style="float: left; margin-right: 10px;" type="checkbox" value="1" />
 			  <label class="string optional" for="user_remember_me"> Remember me</label>
 			  <input class="btn btn-primary btn-block" style="clear: left;" type="submit" name="commit" value="Sign In" />
@@ -34,7 +34,7 @@ include('../includes/header.php');
 <div class="container">
 	<div class="row-fluid">
         <div class="span6">
-        	<h2>Track Lines</h2>
+        	<h2>Create Trips</h2>
         	<p>Track the lines you take everyday.</p>
          	<div>
 	          	<div class="transit-container">
@@ -61,7 +61,7 @@ include('../includes/header.php');
         </div>
 		<div class="span6">
 			<h2>Check Times</h2>
-			<p>Check to see the status of your tracked lines.</p>
+			<p>Check to see the status of your trips.</p>
 			<div class="status-card">
 				<div class="transit-container">
 					<div class="transit-icon"></div>

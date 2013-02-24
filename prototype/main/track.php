@@ -9,7 +9,7 @@ include('../includes/header.php');
 		</ul>
 		<h3 class="muted">MyCommute</h3>
 	</div>
-	<h2>Tracked Lines</h2>
+	<h2>My Trips</h2>
 	<div class="row-fluid track-row" style="border-top:1px solid #eee">
 		<div class="span12">
 			<div class="transit-container">
@@ -22,7 +22,7 @@ include('../includes/header.php');
 				<span>Depart: 6:00 AM</span><br>
 				<span>Arrive: 6:30 AM</span>
 			</div>-->
-			<a href="#" class="btn btn-primary pull-right edit-btn">Edit</a>
+			<a href="#" class="btn btn-secondary pull-right edit-btn">Edit</a>
 		</div>
 	</div>
 	<div class="row-fluid track-row row2" style="display: none;">
@@ -36,10 +36,10 @@ include('../includes/header.php');
 		          	<div class="transit-icon" id="icon2" style="background-color: #9FDAAE"></div><div class="text-center">Ferry</div>
 		        </div>
 				<div class="transit-container-ani">
-		          	<div class="transit-icon" id="icon3" style="background-color: #acd"></div><div class="text-center">Bus</div>
+		          	<div class="transit-icon" id="icon3" style="background-color: #acd"></div><div class="text-center">SFMTA</div>
 		        </div>
 				<div class="transit-container-ani">
-		          	<div class="transit-icon" id="icon4" style="background-color: #7D7D7D"></div><div class="text-center">Muni</div>
+		          	<div class="transit-icon" id="icon4" style="background-color: #7D7D7D"></div><div class="text-center">AC Trans</div>
 		        </div>
 				<div class="transit-container-ani">
 		          	<div class="transit-icon" id="icon5" style="background-color: #E0A421"></div><div class="text-center">Cal-Train</div>
@@ -56,6 +56,9 @@ include('../includes/header.php');
 			<option value="12TH">12th St. Oakland City Center</option><option value="16TH">16th St. Mission (SF)</option><option value="19TH">19th St. Oakland</option><option value="24TH">24th St. Mission (SF)</option><option value="ASHB">Ashby (Berkeley)</option><option value="BALB">Balboa Park (SF)</option><option value="BAYF">Bay Fair (San Leandro)</option><option value="CAST">Castro Valley</option><option value="CIVC">Civic Center/UN Plaza (SF)</option><option value="COLS">Coliseum/Oakland Airport</option><option value="COLM">Colma</option><option value="CONC">Concord</option><option value="DALY">Daly City</option><option value="DBRK">Downtown Berkeley</option><option value="DUBL">Dublin/Pleasanton</option><option value="DELN">El Cerrito del Norte</option><option value="PLZA">El Cerrito Plaza</option><option value="EMBR">Embarcadero (SF)</option><option value="FRMT">Fremont</option><option value="FTVL">Fruitvale (Oakland)</option><option value="GLEN">Glen Park (SF)</option><option value="HAYW">Hayward</option><option value="LAFY">Lafayette</option><option value="LAKE">Lake Merritt (Oakland)</option><option value="MCAR">MacArthur (Oakland)</option><option value="MLBR">Millbrae</option><option value="MONT">Montgomery St. (SF)</option><option value="NBRK">North Berkeley</option><option value="NCON">North Concord/Martinez</option><option value="ORIN">Orinda</option><option value="PITT">Pittsburg/Bay Point</option><option value="PHIL">Pleasant Hill/Contra Costa Centre</option><option value="POWL">Powell St. (SF)</option><option value="RICH">Richmond</option><option value="ROCK">Rockridge (Oakland)</option><option value="SBRN">San Bruno</option><option value="SFIA">San Francisco Int'l Airport</option><option value="SANL">San Leandro</option><option value="SHAY">South Hayward</option><option value="SSAN">South San Francisco</option><option value="UCTY">Union City</option><option value="WCRK">Walnut Creek</option><option value="WDUB">West Dublin/Pleasanton</option><option value="WOAK">West Oakland</option>
 		</select>
 		<a href="#" class="btn btn-primary pull-right save-btn" >Save</a>
+		<div class="text-center">
+			<a class="btn btn-primary add-line-btn" href="#" style="margin-top:20px;"><i class="icon-plus"></i> Add Line</a>
+		</div>
 	</div>      
 	<!--<div class="row-fluid track-row" style="margin-bottom:30px;">
 		<div class="span12">
@@ -117,7 +120,9 @@ include('../includes/header.php');
 			<!--<p>1. Select Public Trans option -> 2. Select Departure -> 3. Select Arrival</p>
 		</div>
 	</div>-->
-	<a class="btn pull-left add-line-btn" href="#" style="margin-top:20px;"><i class="icon-plus"></i> Add Line</a>
+	<div class="text-center">
+		<a class="btn btn-primary add-trip-btn" href="#" style="margin-top:20px;"><i class="icon-plus"></i> Add Trip</a>
+	</div>
 	<!--<a href="../main/saved.php" class="btn btn-primary pull-right">Save</a>-->
 
 </div>
