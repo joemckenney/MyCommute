@@ -1,10 +1,15 @@
 from flask import Flask, render_template, url_for
-
+import requests
+from xml.dom import minidom
 app = Flask(__name__)
 
+BART_URL = "http://api.bart.gov/api/"
 
 @app.route('/bart/advisory')
-def advisory():
+def advisory(payload):
+    advisory_url = BART_URL + 'bsa.aspx'
+
+    resp = requests.get(advisory_url, params=payload)
     # 
     # http://api.bart.gov/api/bsa.aspx
     #
@@ -12,11 +17,14 @@ def advisory():
 
 
 @app.route('/bart/etd')
-def advisory():
+def etd():
+    print 'fooook'
+    advisory_url = BART_URL + 'bsa.aspx'
+    resp = requests.get("http://api.bart.gov/api/bsa.aspx?cmd=bsa&key=EMKL-256J-IU39-EDPT")
     # 
     # http://api.bart.gov/api/etd.aspx
     #
-    return 'bart estimated time of departure'
+    return resp.text
 
 @app.route('/bart/routes')
 def routes():

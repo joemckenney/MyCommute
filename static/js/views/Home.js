@@ -5,9 +5,9 @@ define(
         'underscore',
         'views/Base',
         'views/SignUp',
-        'models/Bart'
+        'models/bart/etd'
     ], 
-    function($, Backbone, _, BaseView, SignUp, BartModel) {
+    function($, Backbone, _, BaseView, SignUp, BartETDModel) {
         return BaseView.extend({
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
@@ -15,10 +15,12 @@ define(
             },
             events: {
                 'click .sign-up-btn': function(e) {
-                    bartTest = new BartModel;
-                    response = bartTest.fetch();
-                    $.when(response).then(function(){},
-                        function(){alert(response.responseText);});
+                    debugger
+                    var bartTest = new BartETDModel();
+                    var response = bartTest.fetch();
+                    $.when(response).then(
+                        function(){},
+                        function(response){ debugger });
                     !this.children.signup.$el.is(':visible') ?
                         this.children.signup.$el.show():
                         this.children.signup.$el.hide();
