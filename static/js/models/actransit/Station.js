@@ -7,7 +7,7 @@ define(
     function($, _, Backbone){
         //replace with Base Model
         return Backbone.Model.extend({
-            url: '/bart/etd'
+            url: '/actransit/station'
             initialize: function() {
                 
             }
