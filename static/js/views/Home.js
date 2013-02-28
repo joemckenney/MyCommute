@@ -5,9 +5,10 @@ define(
         'underscore',
         'views/Base',
         'views/SignUp',
-        'models/bart/etd'
+        'models/bart/etd',
+        'models/actransit/etd'
     ], 
-    function($, Backbone, _, BaseView, SignUp, BartETDModel) {
+    function($, Backbone, _, BaseView, SignUp, BartETDModel, ACtransitETDModel) {
         return BaseView.extend({
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
@@ -25,6 +26,13 @@ define(
                         this.children.signup.$el.show():
                         this.children.signup.$el.hide();
                     e.preventDefault();
+                },
+                'click .test-ac-etd': function(e) {
+                    var acTest = new ACtransitETDModel();
+                    var response = acTest.fetch({ data: { s: "1014950", r:"57" } });
+                    $.when(response).then(
+                        function(){},
+                        function(response){ alert(response.responseText);});
                 }
             },
             render: function(){
@@ -35,6 +43,7 @@ define(
             },
             template: '\
                     <a href="#" role="button" data-target="#myModal" data-toggle="modal" class="btn btn-success sign-up-btn">Sign Up</a>\
+                    <a href="#" role="button" class="btn btn-success test-ac-etd">Test AC ETD</a>\
             '
         });
 });

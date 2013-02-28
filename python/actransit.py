@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, request, render_template, url_for
 import requests
 from xml.dom import minidom
 from init_app import app
@@ -12,11 +12,17 @@ def actransit_advisory():
     return 'actransit system advisory'
 
 
+#http://webservices.nextbus.com/service/publicXMLFeed?command=predictions&a=<agency_tag>&r=<route tag>&s=<stop tag>
 @app.route('/actransit/etd')
 def actransit_etd():
-    #command = 
-    #params =
-    return 'actransit estimated time of departure'
+    p = {
+        "command":  "predictions",
+        "a": "actransit",
+        "s": request.args.get("s"),
+        "r": request.args.get("r")
+    }
+    response = requests.get(ACTRANSIT_URL, params=p )
+    return response.text
 
 @app.route('/actransit/routes')
 def actransit_routes():
