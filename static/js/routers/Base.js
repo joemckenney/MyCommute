@@ -3,7 +3,7 @@ define(
         'jquery',
         'backbone',
         'underscore',
-        'views/Home',
+        'views/home/Master',
         'views/User',
         'models/bart/Route'
     ], 
