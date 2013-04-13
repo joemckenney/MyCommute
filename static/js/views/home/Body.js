@@ -8,10 +8,7 @@ define(
     ], 
     function($, Backbone, _, BaseView, Modal) {
         return BaseView.extend({
-            className: 'navigation-signup',
-            attributes: {
-                style: 'display:block; margin-bottom=20px;'
-            },
+            className: 'jumbo-tron',
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
                 this.children.signup = new Modal();
@@ -23,11 +20,13 @@ define(
             },
             render: function(){
                 this.$el.html(this.compiledTemplate());
-                this.$el.append(this.children.signup.render().el);
                 return this;
             },
             template: '\
-                <a href="#"role="button" data-target="#myModal" data-toggle="modal" class="nav nav-pills pull-right sign-up-btn">Sign Up</a>\
+                <div class="jumbotron" style="padding-top:40px; padding-right:0; text-align: center;background: #dceaf4;margin-bottom: 10px;">\
+                    <h1 style="font-size=100px; line-height=1;">MyCommute</h1>\
+                    <p class="lead" style="font-size=24px; line-height=1.25;">We track yo Bay Area transit shit.</p>\
+                </div>\
             '
         });
 });
