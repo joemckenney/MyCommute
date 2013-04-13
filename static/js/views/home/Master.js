@@ -4,19 +4,19 @@ define(
         'backbone',
         'underscore',
         'views/Base',
-        'views/home/Header',
+        'views/SignUp',
         'models/bart/etd',
         'models/actransit/etd'
     ], 
-    function($, Backbone, _, BaseView, Header, BartETDModel, ACtransitETDModel) {
+    function($, Backbone, _, BaseView, SignUp, BartETDModel, ACtransitETDModel) {
         return BaseView.extend({
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
-                
-                //subviews
-                this.children.header = new Header();
-                //this.children.body   = new Body();
-                //this.children.footer = new Footer();
+                //header
+                //body
+                //footer
+                this.children.header = new SignUp();
+                debugger
             },
             events: {
                 'click .sign-up-btn': function(e) {
@@ -39,9 +39,16 @@ define(
                 }
             },
             render: function(){
-                this.$el.append(this.children.header.render().el);
+                debugger
+                this.$el.html(this.compiledTemplate());
+                this.$el.append(this.children.signup.render().el);
+                this.children.signup.$el.hide();
                 return this;
-            }
+            },
+            template: '\
+                    <a href="#" role="button" data-target="#myModal" data-toggle="modal" class="btn btn-success sign-up-btn">Sign Up</a>\
+                    <a href="#" role="button" class="btn btn-success test-ac-etd">Test AC ETD</a>\
+            '
         });
 });
 

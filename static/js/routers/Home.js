@@ -10,7 +10,8 @@ define(
         return Backbone.Router.extend({
             initialize: function() {
                 //views
-                this.homeview = new HomeView({ el: $('body')});
+                this.homeview = new HomeView();
+                
                 //listeners
                 this.model.pageModel.on('change:page', this.page, this);
             },

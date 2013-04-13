@@ -4,13 +4,14 @@ define(
         'backbone',
         'underscore',
         'views/Home',
-        'views/User'
+        'views/User',
+        'models/bart/Route'
     ], 
-    function($, Backbone, _, HomeView, UserView) {
+    function($, Backbone, _, HomeView, UserView, RouteModel) {
         return Backbone.Router.extend({
             initialize: function(){
                 this.appModel = new Backbone.Model();
-
+                this.bartRoutes = new RouteModel();
                 this.appModel.on('change:page', function(){
                     Backbone.history.navigate(this.appModel.get('page'), true);
                 },this);
