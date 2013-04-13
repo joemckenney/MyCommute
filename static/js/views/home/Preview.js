@@ -17,14 +17,18 @@ define(
                 return this;
             },
             template: '\
-                <div class="span-6" style="float:left";>\
-                    <h2>Track Lines</h2>\
-                </div>\
-                <div class="span-6" style="float:left";>\
-                    <h2>Check Times</h2>\
-                </div>\
-                <div class="sign-up">\
-                    <a href="#myModal" role="button" data-toggle="modal" class="btn btn-success sign-up-btn">Sign Up</a>\
+                <div class="row-fluid">\
+                    <div class="span6">\
+                        <h2>Track Lines</h2>\
+                        <p>Track the lines you take everyday.</p>\
+                    </div>\
+                    <div class="span6">\
+                        <h2>Check Times</h2>\
+                        <p>Check to see the status of your tracked lines.</p>\
+                    </div>\
+                    <div class="sign-up">\
+                        <a href="#" class="btn btn-success sign-up-btn">Sign Up</a>\
+                    </div>\
                 </div>\
             '
         });

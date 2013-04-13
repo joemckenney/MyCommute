@@ -4,51 +4,23 @@ define(
         'backbone',
         'underscore',
         'views/Base',
-        'views/SignUp',
+        'views/home/Header',
+        'views/home/Body',
         'models/bart/etd',
         'models/actransit/etd'
     ], 
-    function($, Backbone, _, BaseView, SignUp, BartETDModel, ACtransitETDModel) {
+    function($, Backbone, _, BaseView, Header, Body, BartETDModel, ACtransitETDModel) {
         return BaseView.extend({
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
-                //header
-                //body
-                //footer
-                this.children.header = new SignUp();
-                debugger
-            },
-            events: {
-                'click .sign-up-btn': function(e) {
-                    var bartTest = new BartETDModel();
-                    var response = bartTest.fetch();
-                    $.when(response).then(
-                        function(){},
-                        function(response){ debugger });
-                    !this.children.signup.$el.is(':visible') ?
-                        this.children.signup.$el.show():
-                        this.children.signup.$el.hide();
-                    e.preventDefault();
-                },
-                'click .test-ac-etd': function(e) {
-                    var acTest = new ACtransitETDModel();
-                    var response = acTest.fetch({ data: { s: "1014950", r:"57" } });
-                    $.when(response).then(
-                        function(){},
-                        function(response){ alert(response.responseText);});
-                }
+                this.children.header = new Header();
+                this.children.body   = new Body();
             },
             render: function(){
-                debugger
-                this.$el.html(this.compiledTemplate());
-                this.$el.append(this.children.signup.render().el);
-                this.children.signup.$el.hide();
+                this.$el.append(this.children.header.render().el);
+                this.$el.append(this.children.body.render().el);
                 return this;
-            },
-            template: '\
-                    <a href="#" role="button" data-target="#myModal" data-toggle="modal" class="btn btn-success sign-up-btn">Sign Up</a>\
-                    <a href="#" role="button" class="btn btn-success test-ac-etd">Test AC ETD</a>\
-            '
+            }
         });
 });
 

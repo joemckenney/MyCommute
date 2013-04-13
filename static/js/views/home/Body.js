@@ -4,16 +4,14 @@ define(
         'backbone',
         'underscore',
         'views/Base',
-        'views/shared/Modal',
         'views/home/Preview'
     ], 
-    function($, Backbone, _, BaseView, Modal, Preview) {
+    function($, Backbone, _, BaseView, Preview) {
         return BaseView.extend({
+            className: 'main-container',
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
                 this.children.preview = new Preview();
-            },
-            events: {
             },
             render: function(){
                 this.$el.html(this.compiledTemplate());

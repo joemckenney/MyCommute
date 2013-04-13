@@ -20,15 +20,13 @@ define(
             },
             render: function(){
                 this.$el.html(this.compiledTemplate());
-                this.$('.sign-in').append(this.children.signup.render().el);
+                this.$el.append(this.children.signup.render().el);
                 return this;
             },
             template: '\
                 <ul class="nav nav-pills pull-right">\
                     <li class="dropdown open" id="menu1">\
-                        <a class="dropdown-toggle sign-in pull-right" data-toggle="dropdown" href="#menu1">Sign In</a>\
-                    </li>\
-                </ul>\
+                        <a class="dropdown-toggle sign-in nav nav-pills pull-right" data-toggle="dropdown" href="#menu1">Sign In</a>\
             '
         });
 });
