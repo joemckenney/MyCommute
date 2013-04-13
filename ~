@@ -4,10 +4,9 @@ define(
         'backbone',
         'underscore',
         'views/Base',
-        'views/shared/Modal',
-        'views/home/Preview'
+        'views/shared/Modal'
     ], 
-    function($, Backbone, _, BaseView, Modal, Preview) {
+    function($, Backbone, _, BaseView, Modal) {
         return BaseView.extend({
             className: 'jumbo-tron',
             initialize: function(){
@@ -18,7 +17,6 @@ define(
             },
             render: function(){
                 this.$el.html(this.compiledTemplate());
-                this.$el.append(this.children.preview.render().el);
                 return this;
             },
             template: '\
