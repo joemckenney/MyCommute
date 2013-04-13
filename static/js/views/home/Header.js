@@ -8,10 +8,7 @@ define(
     ], 
     function($, Backbone, _, BaseView, Modal) {
         return BaseView.extend({
-            className: 'navigation-signup',
-            attributes: {
-                style: 'display:block; margin-bottom=20px;'
-            },
+            className: 'container',
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
                 this.children.signup = new Modal();
@@ -27,7 +24,7 @@ define(
                 return this;
             },
             template: '\
-                <a href="#"role="button" data-target="#myModal" data-toggle="modal" class="nav nav-pills pull-right sign-up-btn">Sign Up</a>\
+                <a href="#"role="button" data-target="#myModal" data-toggle="modal" class="nav nav-pills pull-right sign-up-btn">Sign In</a>\
             '
         });
 });

@@ -8,7 +8,7 @@ define(
     ], 
     function($, Backbone, _, BaseView, Modal) {
         return BaseView.extend({
-            className: 'preview-block',
+            className: 'container',
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
             },
@@ -22,6 +22,9 @@ define(
                 </div>\
                 <div class="span-6" style="float:left";>\
                     <h2>Check Times</h2>\
+                </div>\
+                <div class="sign-up">\
+                    <a href="#myModal" role="button" data-toggle="modal" class="btn btn-success sign-up-btn">Sign Up</a>\
                 </div>\
             '
         });
