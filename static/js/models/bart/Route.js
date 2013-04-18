@@ -11,7 +11,7 @@ define(
             initialize: function() {
                 debugger
                 this.fetch({
-                    success: function(model, reponse, options) {
+                    success: function(model, response, options) {
                         debugger
                     }.bind(this)
                 });

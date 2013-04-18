@@ -8,7 +8,6 @@ ACTRANSIT_URL = "http://webservices.nextbus.com/service/publicXMLFeed?"
 
 @app.route('/actransit/advisory')
 def actransit_advisory():
-    
     return 'actransit system advisory'
 
 
@@ -22,7 +21,8 @@ def actransit_etd():
         "r": request.args.get("r")
     }
     response = requests.get(ACTRANSIT_URL, params=p )
-    return response.text
+    if (response.status_code == 200):
+        return response.text
 
 @app.route('/actransit/routes')
 def actransit_routes():

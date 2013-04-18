@@ -2,17 +2,21 @@ define(
     [
         'jquery',
         'underscore',
-        'backbone'
+        'backbone',
+        'models/Base'
     ],
-    function($, _, Backbone){
-        //replace with Base Model
-        return Backbone.Model.extend({
+    function($, _, Backbone,BaseModel){
+        return BaseModel.extend({
             url: '/actransit/etd',
-            initialize: function() {
-                
+            initialize: function(params) {
+                this.fetch({
+                    data: { s: params.stop, r: params.route },
+                    success: function(model, response, options) {
+                        debugger
+                        this.routes = response.roots.routes;
+                    }.bind(this)
+                });    
             }
-        });
-        
-
+        })
     }
 );
