@@ -11,7 +11,7 @@ define(
             initialize: function() {
                 //views
                 this.homeview = new HomeView();
-                
+                debugger  
                 //listeners
                 this.model.pageModel.on('change:page', this.page, this);
             },

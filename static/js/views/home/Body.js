@@ -8,10 +8,27 @@ define(
     ], 
     function($, Backbone, _, BaseView, Preview) {
         return BaseView.extend({
+            /* 
+             * @param {Object} options: {
+             *     models: {
+             *         page: <Backbone.Model>
+             *     },
+             *     collections: {
+             *         routes: <collectiones.bart.Routes>
+             *     }
+             * }
+             */
             className: 'main-container',
             initialize: function(){
                 BaseView.prototype.initialize.apply(this, arguments);
-                this.children.preview = new Preview();
+                this.children.preview = new Preview({
+                    models: {
+                        page: this.pageModel
+                    },
+                    collections: {
+                        routes: this.routesCollection
+                    }
+                });
             },
             render: function(){
                 this.$el.html(this.compiledTemplate());

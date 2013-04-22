@@ -3,17 +3,21 @@ define(
         'jquery',
         'backbone',
         'underscore',
+        'collections/bart/Routes',
         'views/home/Master',
-        'views/User',
-        'models/bart/Route'
+        'views/User'
     ], 
-    function($, Backbone, _, HomeView, UserView, RouteModel) {
+    function($, Backbone, _, RoutesCollection, HomeView, UserView) {
         return Backbone.Router.extend({
             initialize: function(){
-                this.appModel = new Backbone.Model();
-                this.bartRoutes = new RouteModel();
-                this.appModel.on('change:page', function(){
-                    Backbone.history.navigate(this.appModel.get('page'), true);
+                //models
+                this.pageModel = new Backbone.Model; 
+               
+                //collections
+                this.routesCollection = new RoutesCollection();
+
+                this.pageModel.on('change:page', function(){
+                    Backbone.history.navigate(this.pageModel.get('page'), true);
                 },this);
             },
             routes: {
@@ -21,21 +25,24 @@ define(
                 'user': 'user'
             },
             home: function(page) {
-                this.appModel.set('page', '');
+                this.pageModel.set('page', '');
                 this.homeview = new HomeView({
                     el: $('#container'),
                     models: {
-                        app: this.appModel
+                        page: this.pageModel
+                    },
+                    collections: {
+                        routes: this.routesCollection
                     }
                 });
                 this.homeview.render();
             },
             user: function() {
-                this.appModel.set('page', 'user');
+                this.pageModel.set('page', 'user');
                 this.userview = new UserView({
                     el: $('#container'),
                     models: {
-                        app: this.appModel
+                        page: this.pageModel
                     }
                 });
                 this.userview.render();

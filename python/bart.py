@@ -23,16 +23,13 @@ def etd():
     #
     return 'bart estimated time of departure'
 
-@app.route('/bart/routes')
+@app.route('/api.bart.gov/api/routes')
 def routes():
     # 
     # http://api.bart.gov/api/routes.aspx
     #
     r = requests.get(BART_URL + 'route.aspx?cmd=routes&' + BART_KEY)
-    if(r.status_code == 200):
-        return json.dumps(xmltodict.parse(r.text))
-    else: 
-        return 'foo'
+    return r.text
 
 @app.route('/bart/schedule')
 def schedule():
