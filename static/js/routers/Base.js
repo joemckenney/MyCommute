@@ -5,9 +5,11 @@ define(
         'underscore',
         'collections/bart/Routes',
         'views/home/Master',
-        'views/User'
+        'views/User',
+        'models/actransit/etd',
+        'views/etd/new'
     ], 
-    function($, Backbone, _, RoutesCollection, HomeView, UserView) {
+    function($, Backbone, _, RoutesCollection, HomeView, UserView, actransitETD, newETD) {
         return Backbone.Router.extend({
             initialize: function(){
                 //models
@@ -22,7 +24,8 @@ define(
             },
             routes: {
                 '': 'home',
-                'user': 'user'
+                'user': 'user',
+                'etds': 'etds'
             },
             home: function(page) {
                 this.pageModel.set('page', '');
@@ -46,6 +49,16 @@ define(
                     }
                 });
                 this.userview.render();
+            },
+            etds: function(){
+                this.pageModel.set('page', 'etds');
+                this.etdsview = new newETD({
+                    el: $('#container'),
+                    models: {
+                        page: this.pageModel
+                    }
+                })
+                this.etdsview.render();
             }
         });
     }

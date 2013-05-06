@@ -22,7 +22,8 @@ def actransit_etd():
         "r": request.args.get("r")
     }
     response = requests.get(ACTRANSIT_URL, params=p )
-    return response.text
+    print response
+    return response.text, response.status_code
 
 @app.route('/actransit/routes')
 def actransit_routes():
